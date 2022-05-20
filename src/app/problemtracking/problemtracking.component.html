@@ -1,0 +1,62 @@
+<p></p>
+  <div class="display-3 fst-italic text-center"><h1 class="larger" style="color: blue">Seguimiento de Problema</h1>
+  </div>
+    <p class="text fs-4">Seleccione un problema:</p>
+    <div class="row">
+      <div class="col">
+<table class="table table-primary" >
+    <thead>
+      <tr>
+        <th scope="col">Problema</th>
+        <th scope="col">Folio</th>
+        <th scope="col">Fecha</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th scope="row">Problema 1</th>
+        <td>1234</td>
+        <td>01/02/2020</td>
+        <td><button class="btn btn-primary" (click)=Ocultar1()>Mostrar</button></td>
+      </tr>
+      <tr>
+        <th scope="row">Problema 2</th>
+        <td>5678</td>
+        <td>03/04/2021</td>
+        <td><button class="btn btn-primary" (click)=Ocultar2()>Mostrar</button></td>
+      </tr>
+    </tbody>
+  </table>
+  <p class="text fs-4">Información del problema:</p>
+    <li class="form-control mr-sm-2" *ngIf="band1">
+      <div class="row">
+        <div class="col">
+          <div class="form-outline">
+            <input type="text" id="form8Example1" class="form-control" />
+            <label class="form-label" for="form8Example1">Nombre(s):</label>
+          </div>
+          <div class="form-outline">
+            <input type="text" id="form8Example1" class="form-control" />
+            <label class="form-label" for="form8Example1">Correo:</label>
+          </div>
+          <div class="form-outline">
+            <input type="text" id="form8Example1" class="form-control" />
+            <label class="form-label" for="form8Example1">Edad:</label>
+          </div>
+        </div>
+        <div class="col">
+          <div class="form-outline">
+            <input type="email" id="form8Example2" class="form-control" />
+            <label class="form-label" for="form8Example2">Apellidos:</label>
+          </div>
+          <div class="form-outline">
+              <input type="password" class="form-control" id="exampleInputPassword1">
+            <label class="form-label" for="form8Example2">Contraseña:</label>
+          </div>
+          <div class="form-outline">
+            <input type="email" id="form8Example2" class="form-control" />
+            <label class="form-label" for="form8Example2">Numero telefonico:</label>
+          </div>
+        </div>
+      </div>
+    </li>
