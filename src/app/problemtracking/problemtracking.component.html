@@ -29,34 +29,104 @@
   </table>
   <p class="text fs-4">Información del problema:</p>
     <li class="form-control mr-sm-2" *ngIf="band1">
-      <div class="row">
-        <div class="col">
-          <div class="form-outline">
-            <input type="text" id="form8Example1" class="form-control" />
-            <label class="form-label" for="form8Example1">Nombre(s):</label>
-          </div>
-          <div class="form-outline">
-            <input type="text" id="form8Example1" class="form-control" />
-            <label class="form-label" for="form8Example1">Correo:</label>
-          </div>
-          <div class="form-outline">
-            <input type="text" id="form8Example1" class="form-control" />
-            <label class="form-label" for="form8Example1">Edad:</label>
-          </div>
+      <form class="row g-3">
+        <div class="col-md-6">
+          <label for="inputEmail4" class="form-label">Nombre(s):</label>
+          <input type="email" class="form-control" id="inputEmail4">
         </div>
-        <div class="col">
-          <div class="form-outline">
-            <input type="email" id="form8Example2" class="form-control" />
-            <label class="form-label" for="form8Example2">Apellidos:</label>
+        <div class="col-md-6">
+          <label for="inputPassword4" class="form-label">Apellidos:</label>
+          <input type="email" class="form-control" id="inputEmail4">
+        </div>
+        <div class="col-md-6">
+          <label for="inputEmail4" class="form-label">Folio de problema:</label>
+          <input type="email" class="form-control" id="inputEmail4">
+        </div>
+        <div class="col-md-6">
+          <label for="inputEmail4" class="form-label">Correo:</label>
+          <input type="email" class="form-control" id="inputEmail4">
+        </div>
+        <div class="col-md-6">
+          <label for="inputEmail4" class="form-label">Número telefónico:</label>
+          <input type="email" class="form-control" id="inputEmail4">
+        </div>
+        <label for="inputEmail4" class="form-label" class="col-md-6">Tipo de problema:</label>
+        <div class="col-md-6">
+          <label for="inputEmail4" class="form-label">Especifique su problema:</label>
+          <textarea class="form-control" id="floatingTextarea2" style="height: 100px"></textarea>
+  <label for="floatingTextarea2"></label>
+        </div>
+        <div class="form-check" class="col-md-6">
+          <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+          <label class="form-check-label" for="flexRadioDefault1">
+            Tipo de problema 1
+          </label>
+        <div class="form-check" class="col-md-6">
+          <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
+          <label class="form-check-label" for="flexRadioDefault2">
+            Tipo de problema 2
+          </label>
+        </div>
+        <div class="form-check" class="col-md-6">
+          <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
+          <label class="form-check-label" for="flexRadioDefault2">
+            Tipo de problema 3
+          </label>
+        </div>
+      <div class="col-md-6">
+        <label for="inputEmail4" class="form-label" class="fw-bold" style="color: red">STATUS:</label>
+        <input type="email" class="form-control" id="inputEmail4" placeholder="EN PROCESO" style="color:red">
+      </div>
+    </div>
+      </form>
+      <li class="form-control mr-sm-2" *ngIf="band2">
+        <form class="row g-3">
+          <div class="col-md-6">
+            <label for="inputEmail4" class="form-label">Nombre(s):</label>
+            <input type="email" class="form-control" id="inputEmail4">
           </div>
-          <div class="form-outline">
-              <input type="password" class="form-control" id="exampleInputPassword1">
-            <label class="form-label" for="form8Example2">Contraseña:</label>
+          <div class="col-md-6">
+            <label for="inputPassword4" class="form-label">Apellidos:</label>
+            <input type="email" class="form-control" id="inputEmail4">
           </div>
-          <div class="form-outline">
-            <input type="email" id="form8Example2" class="form-control" />
-            <label class="form-label" for="form8Example2">Numero telefonico:</label>
+          <div class="col-md-6">
+            <label for="inputEmail4" class="form-label">Folio de problema:</label>
+            <input type="email" class="form-control" id="inputEmail4">
           </div>
+          <div class="col-md-6">
+            <label for="inputEmail4" class="form-label">Correo:</label>
+            <input type="email" class="form-control" id="inputEmail4">
+          </div>
+          <div class="col-md-6">
+            <label for="inputEmail4" class="form-label">Número telefónico:</label>
+            <input type="email" class="form-control" id="inputEmail4">
+          </div>
+          <label for="inputEmail4" class="form-label" class="col-md-6">Tipo de problema:</label>
+          <div class="col-md-6">
+            <label for="inputEmail4" class="form-label">Especifique su problema:</label>
+            <textarea class="form-control" id="floatingTextarea2" style="height: 100px"></textarea>
+    <label for="floatingTextarea2"></label>
+          </div>
+          <div class="form-check" class="col-md-6">
+            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+            <label class="form-check-label" for="flexRadioDefault1">
+              Tipo de problema 1
+            </label>
+          <div class="form-check" class="col-md-6">
+            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
+            <label class="form-check-label" for="flexRadioDefault2">
+              Tipo de problema 2
+            </label>
+          </div>
+          <div class="form-check" class="col-md-6">
+            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
+            <label class="form-check-label" for="flexRadioDefault2">
+              Tipo de problema 3
+            </label>
+          </div>
+        <div class="col-md-6">
+          <label for="inputEmail4" class="form-label" class="fw-bold" style="color: red">STATUS:</label>
+          <input type="email" class="form-control" id="inputEmail4" placeholder="EN PROCESO" style="color:red">
         </div>
       </div>
-    </li>
+        </form>
