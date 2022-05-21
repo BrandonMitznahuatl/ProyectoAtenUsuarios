@@ -10,6 +10,7 @@ import { LoginComponent } from './login/login.component';
 
 import { PagemainComponent } from './pagemain/pagemain.component';
 import { MicuentaComponent } from './micuenta/micuenta.component';
+import { CatalogoComponent } from './catalogo/catalogo.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { MicuentaComponent } from './micuenta/micuenta.component';
     LoginComponent,
     RegisterComponent,
     MicuentaComponent,
-    PagemainComponent
+    PagemainComponent,
+    CatalogoComponent
   ],
   imports: [
     BrowserModule,
