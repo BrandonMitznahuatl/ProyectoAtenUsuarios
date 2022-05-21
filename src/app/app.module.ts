@@ -7,7 +7,8 @@ import { WelcomeComponent } from './welcome/welcome.component';
 import { RegisterComponent } from './register/register.component';
 import { ProblemtrackingComponent } from './problemtracking/problemtracking.component';
 import { LoginComponent } from './login/login.component';
-import { RegisterprobComponent } from './registerprob/registerprob.component';
+
+import { PagemainComponent } from './pagemain/pagemain.component';
 import { MicuentaComponent } from './micuenta/micuenta.component';
 
 @NgModule({
@@ -17,9 +18,9 @@ import { MicuentaComponent } from './micuenta/micuenta.component';
     RegisterComponent,
     ProblemtrackingComponent,
     LoginComponent,
-    RegisterprobComponent,
-    RegisterprobComponent,
-    MicuentaComponent
+    RegisterComponent,
+    MicuentaComponent,
+    PagemainComponent
   ],
   imports: [
     BrowserModule,
