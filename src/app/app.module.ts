@@ -11,6 +11,8 @@ import { LoginComponent } from './login/login.component';
 import { PagemainComponent } from './pagemain/pagemain.component';
 import { MicuentaComponent } from './micuenta/micuenta.component';
 import { CatalogoComponent } from './catalogo/catalogo.component';
+import { NavbarComponent } from './navbar/navbar.component';
+import { Navbar2Component } from './navbar2/navbar2.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +24,9 @@ import { CatalogoComponent } from './catalogo/catalogo.component';
     RegisterComponent,
     MicuentaComponent,
     PagemainComponent,
-    CatalogoComponent
+    CatalogoComponent,
+    NavbarComponent,
+    Navbar2Component
   ],
   imports: [
     BrowserModule,
