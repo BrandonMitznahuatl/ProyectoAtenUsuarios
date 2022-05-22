@@ -8,6 +8,7 @@ import { CatalogoComponent } from './catalogo/catalogo.component';
 import { MicuentaComponent } from './micuenta/micuenta.component';
 import { PagemainComponent } from './pagemain/pagemain.component';
 import { RegisterprobComponent } from './registerprob/registerprob.component';
+import { Navbar2Component } from './navbar2/navbar2.component';
 
 
 const routes: Routes = [
@@ -18,7 +19,8 @@ const routes: Routes = [
   {path: 'Catalogo', component: CatalogoComponent},
   {path: 'micuenta', component: MicuentaComponent},
   {path: 'pagemain', component: PagemainComponent},
-  {path: 'registerprob', component: RegisterprobComponent}
+  {path: 'registerprob', component: RegisterprobComponent},
+  {path: 'navbar2', component: Navbar2Component}
 ];
 
 @NgModule({
