@@ -24,7 +24,7 @@ routes.get('/bdseguimiento',(req,res)=>{
 })
 
 //Ruta de Loc¿ginAcceso
-routes.get('/bdLoginAcceso',(req,res)=>{
+routes.get('/bdAcceso',(req,res)=>{
     let query = "SELECT * FROM LoginAcceder;";
     conexion.query(query,(error, rows)=>{
         if(error){
@@ -38,7 +38,7 @@ routes.get('/bdLoginAcceso',(req,res)=>{
 })
 
 //Ruta de Loc¿ginRecuperar
-routes.get('/bdLoginRecuperar',(req,res)=>{
+routes.get('/bdRecuperar',(req,res)=>{
     let query = "SELECT * FROM LoginRecuperar;";
     conexion.query(query,(error, rows)=>{
         if(error){
@@ -52,8 +52,8 @@ routes.get('/bdLoginRecuperar',(req,res)=>{
 })
 
 //Ruta de LoginRegistrar
-routes.get('/bdLoginRegistrar',(req,res)=>{
-    let query = "SELECT * FROM LoginRegistrar;";
+routes.get('/bdRegistrar',(req,res)=>{
+    let query = "SELECT * FROM LoginRegistro;";
     conexion.query(query,(error, rows)=>{
         if(error){
             res.send(error);
