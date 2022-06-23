@@ -51,6 +51,20 @@ routes.get('/bdLoginRecuperar',(req,res)=>{
     //res.send('Base de datos');
 })
 
+//Ruta de LoginRegistrar
+routes.get('/bdLoginRegistrar',(req,res)=>{
+    let query = "SELECT * FROM LoginRegistrar;";
+    conexion.query(query,(error, rows)=>{
+        if(error){
+            res.send(error);
+        }
+        else{
+            res.send(rows);
+        }
+    })
+    //res.send('Base de datos');
+})
+
 
 module.exports = routes;
 
