@@ -23,6 +23,20 @@ routes.get('/bdseguimiento',(req,res)=>{
     //res.send('Base de datos');
 })
 
+//Ruta de Loc¿ginAcceso
+routes.get('/bdLoginAcceso',(req,res)=>{
+    let query = "SELECT * FROM LoginAcceder;";
+    conexion.query(query,(error, rows)=>{
+        if(error){
+            res.send(error);
+        }
+        else{
+            res.send(rows);
+        }
+    })
+    //res.send('Base de datos');
+})
+
 
 module.exports = routes;
 
