@@ -8,8 +8,8 @@ routes.get('/',(req,res)=>{
 
 const conexion = require("../config/conexionBD")
 
-routes.get('/bdregistro',(req,res)=>{
-    let query = "select * from registro";
+routes.get('/bdmicuenta',(req,res)=>{
+    let query = "select *from micuenta";
     conexion.query(query,(error, rows)=>{
         if(error){
             res.send(error);
