@@ -5,7 +5,7 @@ const conecta = mysql.createConnection({
     password:"sasa",
     password:"root",
     port:"3306",
-    database:"ProyectoEquipo"
+    database:"ProyectAten"
 });
 conecta.connect();
 module.exports=conecta;
