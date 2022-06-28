@@ -10,8 +10,8 @@ const conexion = require("../config/conexionBD")
 
 
 //Ruta seguimeinto del problema
-routes.get('/bdseguimiento',(req,res)=>{
-    let query = "SELECT * FROM problemtracking;";
+routes.get('/bdsolprob',(req,res)=>{
+    let query = "select *from solprob";
     conexion.query(query,(error, rows)=>{
         if(error){
             res.send(error);
