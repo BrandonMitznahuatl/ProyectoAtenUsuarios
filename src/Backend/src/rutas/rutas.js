@@ -10,7 +10,7 @@ const conexion = require("../config/conexionBD")
 
 
 //Ruta seguimeinto del problema
-routes.get('/bbsegprob',(req,res)=>{
+routes.get('/bdseguimeinto',(req,res)=>{
     let query = "SELECT * FROM problemtracking    ";
     conexion.query(query,(error, rows)=>{
         if(error){
@@ -66,6 +66,20 @@ routes.get('/bdRecuperar',(req,res)=>{
 //Ruta de LoginRegistrar
 routes.get('/bdRegistrar',(req,res)=>{
     let query = "SELECT * FROM LoginRegistro;";
+    conexion.query(query,(error, rows)=>{
+        if(error){
+            res.send(error);
+        }
+        else{
+            res.send(rows);
+        }
+    })
+    //res.send('Base de datos');
+})
+
+//mi cuenta
+routes.get('/bdmicuenta',(req,res)=>{
+    let query = "select *from micuenta";
     conexion.query(query,(error, rows)=>{
         if(error){
             res.send(error);
