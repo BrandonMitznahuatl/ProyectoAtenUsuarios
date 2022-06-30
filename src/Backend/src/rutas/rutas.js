@@ -10,8 +10,8 @@ const conexion = require("../config/conexionBD")
 
 
 //Ruta seguimeinto del problema
-routes.get('/bdseguimiento',(req,res)=>{
-    let query = "SELECT * FROM problemtracking;";
+routes.get('/bdseguimeinto',(req,res)=>{
+    let query = "SELECT * FROM problemtracking    ";
     conexion.query(query,(error, rows)=>{
         if(error){
             res.send(error);
@@ -20,10 +20,24 @@ routes.get('/bdseguimiento',(req,res)=>{
             res.send(rows);
         }
     })
-    //res.send('Base de datos');
+   
 })
 
-// RUTA DE LOGIN ACCESO
+
+//Ruta solucion del problema
+routes.get('/bdsolprob',(req,res)=>{
+    let query = "select *from solprob";
+    conexion.query(query,(error, rows)=>{
+        if(error){
+            res.send(error);
+        }
+        else{
+            res.send(rows);
+        }
+    })
+})
+//Ruta Login Acceso
+
 routes.get('/bdAcceso',(req,res)=>{
     let query = "select usuario, contraseña from Acceso;";
     conexion.query(query,(error, rows)=>{
@@ -62,7 +76,18 @@ routes.get('/bdDatosPers',(req,res)=>{
     })
 })
 
-
-
+//mi cuenta
+routes.get('/bdmicuenta',(req,res)=>{
+    let query = "select *from micuenta";
+    conexion.query(query,(error, rows)=>{
+        if(error){
+            res.send(error);
+        }
+        else{
+            res.send(rows);
+        }
+    })
+    //res.send('Base de datos');
+})
 module.exports = routes;
 
