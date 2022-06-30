@@ -34,12 +34,11 @@ routes.get('/bdAcceso',(req,res)=>{
             res.send(rows);
         }
     })
-    //res.send('Base de datos');
 })
 
-//Acceso y Rol
-routes.get('/bdUsuarios',(req,res)=>{
-    let query = "select Acceso.Usuario, Rol.Descripcion FROM Acceso INNER JOIN Rol ON Acceso.Usuario=Rol.Descripcion;";
+//RUTA DE LOGIN ROL
+routes.get('/bdRol',(req,res)=>{
+    let query = "select * from Rol;";
     conexion.query(query,(error, rows)=>{
         if(error){
             res.send(error);
@@ -48,8 +47,21 @@ routes.get('/bdUsuarios',(req,res)=>{
             res.send(rows);
         }
     })
-    //res.send('Base de datos');
 })
+
+//RUTA DE LOGIN DATOS PERSONALES
+routes.get('/bdDatosPers',(req,res)=>{
+    let query = "select * from DatosPersonales;";
+    conexion.query(query,(error, rows)=>{
+        if(error){
+            res.send(error);
+        }
+        else{
+            res.send(rows);
+        }
+    })
+})
+
 
 
 module.exports = routes;
