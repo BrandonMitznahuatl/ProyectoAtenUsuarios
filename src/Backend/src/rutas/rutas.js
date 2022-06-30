@@ -23,9 +23,9 @@ routes.get('/bdseguimiento',(req,res)=>{
     //res.send('Base de datos');
 })
 
-//Ruta de Loc¿ginAcceso
+// RUTA DE LOGIN ACCESO
 routes.get('/bdAcceso',(req,res)=>{
-    let query = "SELECT * FROM LoginAcceder;";
+    let query = "select usuario, contraseña from Acceso;";
     conexion.query(query,(error, rows)=>{
         if(error){
             res.send(error);
@@ -37,23 +37,9 @@ routes.get('/bdAcceso',(req,res)=>{
     //res.send('Base de datos');
 })
 
-//Ruta de Loc¿ginRecuperar
-routes.get('/bdRecuperar',(req,res)=>{
-    let query = "SELECT * FROM LoginRecuperar;";
-    conexion.query(query,(error, rows)=>{
-        if(error){
-            res.send(error);
-        }
-        else{
-            res.send(rows);
-        }
-    })
-    //res.send('Base de datos');
-})
-
-//Ruta de LoginRegistrar
-routes.get('/bdRegistrar',(req,res)=>{
-    let query = "SELECT * FROM LoginRegistro;";
+//Acceso y Rol
+routes.get('/bdUsuarios',(req,res)=>{
+    let query = "select Acceso.Usuario, Rol.Descripcion FROM Acceso INNER JOIN Rol ON Acceso.Usuario=Rol.Descripcion;";
     conexion.query(query,(error, rows)=>{
         if(error){
             res.send(error);
