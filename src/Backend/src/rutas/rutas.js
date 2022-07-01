@@ -92,7 +92,7 @@ routes.get('/bdmicuenta',(req,res)=>{
 //------------------------------RUTAS CRUD (CREATE, READ, UPDATE, DELETE)------------------------------------
 
 //  LOGIN ACCESO - GET (ANDREA ALIN HERNANDEZ PACHECO)
-routes.get('/bd/:id', (req, res) =>{
+routes.get('/bd/acceso/:id', (req, res) =>{
     const {id}=req.params;
     let query = "select * from Acceso where Id_regDatos=?";
     conexion.query(query,[id],(error,rows)=>{
@@ -107,7 +107,7 @@ routes.get('/bd/:id', (req, res) =>{
     
 });
 //  LOGIN ACCESO - DELETE (HERNÁNDEZ PACHECO ANDREA ALIN)
-routes.delete('/bd/:id', (req, res) =>{
+routes.delete('/bd/acceso/:id', (req, res) =>{
     const {id}=req.params;
     let query = "delete from Acceso where id_rol=?";
     conexion.query(query,[id],(error,rows)=>{
@@ -120,6 +120,18 @@ routes.delete('/bd/:id', (req, res) =>{
            }
         
     })
+});
+
+//  LOGIN ACCESO - POST (HERNÁNDEZ PACHECO ANDREA ALIN)
+routes.post('/bd/acceso/Insertar/', (req, res) => {
+    const {id_Acceso, id_regDatos, id_rol, Usuario,Contraseña}=req.body
+    let sql = `insert into Acceso(id_Acceso, id_regDatos, id_rol, Usuario,Contraseña) values ( '${id_Acceso}','${id_regDatos}','${id_rol}','${Usuario}','${Contraseña}')`;
+    conexion.query(sql, (error, rows)=> {
+        if(error) throw error
+           else{
+            res.json('Dato insertado correctamente');
+           }
+})
 });
 
 //  LOGIN ROL - GET (ANDREA ALIN HERNANDEZ PACHECO)
