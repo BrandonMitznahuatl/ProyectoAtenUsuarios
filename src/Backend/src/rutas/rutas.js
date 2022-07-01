@@ -247,8 +247,17 @@ routes.post('/reg3/', (req, res) => {
    })
 });
 
-
-
+//Modificar
+routes.put('/reg4/', (req, res) => {
+    const {id_regDatos, Correo}=req.body
+    let sql = `UPDATE RegistroDatos SET  Correo = '${Correo}' WHERE (id_regDatos = '${id_regDatos}')`; 
+    conexion.query(sql, (error, rows)=> {
+        if(error) throw error
+           else{
+            res.json('Dato modificado correctamente');
+           }
+    })
+});
 
 
 
