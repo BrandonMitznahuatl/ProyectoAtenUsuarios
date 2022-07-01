@@ -61,6 +61,18 @@ routes.get('/bdseguimiento',(req,res)=>{
         }
     })
 })
+//Get seguimeinto del problema folio
+routes.get('/bdseguimiento1',(req,res)=>{
+    let query = "SELECT * FROM segproblema WHERE Folio_problema=0110";
+    conexion.query(query,(error, rows)=>{
+        if(error){
+            res.send(error);
+        }
+        else{
+            res.send(rows);
+        }
+    })
+})
 
 //Get solucion del problema
 routes.get('/bdsolprob',(req,res)=>{
