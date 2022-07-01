@@ -134,6 +134,18 @@ routes.post('/bd/acceso/Insertar/', (req, res) => {
 })
 });
 
+//  LOGIN ACCESO - PUT (HERNÁNDEZ PACHECO ANDREA ALIN)
+routes.put('/bd/acceso/Modificar/', (req, res) => {
+    const {Usuario, Contraseña}=req.body
+    let sql = `UPDATE Acceso SET  Contraseña = '${Contraseña}' WHERE (Usuario = '${Usuario}')`; 
+    conexion.query(sql, (error, rows)=> {
+        if(error) throw error
+           else{
+            res.json('Dato modificado correctamente');
+           }
+})
+});
+
 //  LOGIN ROL - GET (ANDREA ALIN HERNANDEZ PACHECO)
 routes.get('/bd/rol/:id', (req, res) =>{
     const {id}=req.params;
