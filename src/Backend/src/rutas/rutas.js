@@ -106,6 +106,22 @@ routes.get('/bd/:id', (req, res) =>{
     })
     
 });
+//  LOGIN ACCESO - DELETE (HERNÁNDEZ PACHECO ANDREA ALIN)
+routes.delete('/bd/:id', (req, res) =>{
+    const {id}=req.params;
+    let query = "delete from Acceso where id_rol=?";
+    conexion.query(query,[id],(error,rows)=>{
+        if(error)
+        {
+            console.error(error);
+        }
+           else{
+            res.send('Elemento eliminado');
+           }
+        
+    })
+});
+
 
 
 
