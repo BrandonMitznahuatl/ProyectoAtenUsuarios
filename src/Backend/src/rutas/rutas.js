@@ -204,7 +204,7 @@ routes.put('/bd/rol/Modificar/', (req, res) => {
 
 
 //------------------------------RUTAS CRUD (CREATE, READ, UPDATE, DELETE)------------------------------------
-//Registro de Dato - Reyes Mitznahuatl Brandon Jesus
+//Registro de Datos - Reyes Mitznahuatl Brandon Jesus
 
 routes.get('/reg1/:id',(req,res)=>{
     const {id}=req.params;
@@ -219,6 +219,21 @@ routes.get('/reg1/:id',(req,res)=>{
     })
     //res.send('Base de datos');
 })
+
+//Eliminar
+routes.delete('/reg2/:id',(req,res)=>{
+    const {id}=req.params;
+    let query = "Delete From RegistroDatos where id_regDatos=?";
+    conexion.query(query,[id],(error, rows)=>{
+        if(error){
+            res.send(error);
+        }
+        else{
+            res.send('Registro eliminado');
+        }
+    })
+})
+
 
 
 
