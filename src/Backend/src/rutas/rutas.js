@@ -87,7 +87,31 @@ routes.get('/bdmicuenta',(req,res)=>{
             res.send(rows);
         }
     })
-    //res.send('Base de datos');
 })
+
+//------------------------------RUTAS CRUD (CREATE, READ, UPDATE, DELETE)------------------------------------
+
+//  LOGIN ACCESO - GET (ANDREA ALIN HERNANDEZ PACHECO)
+routes.get('/bd/:id', (req, res) =>{
+    const {id}=req.params;
+    let query = "select * from Acceso where Id_regDatos=?";
+    conexion.query(query,[id],(error,rows)=>{
+        if(error) 
+        {
+            console.error(error);
+        }
+           else{
+            res.send(rows);
+           }
+    })
+    
+});
+
+
+
+
+
+
+
 module.exports = routes;
 
