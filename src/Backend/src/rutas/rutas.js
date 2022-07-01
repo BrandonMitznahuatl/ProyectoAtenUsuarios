@@ -166,6 +166,20 @@ routes.post('/bd/rol/Insertar/', (req, res) => {
 })
 });
 
+//  LOGIN ROL - PUT (HERNÁNDEZ PACHECO ANDREA ALIN)
+routes.put('/bd/rol/Modificar/', (req, res) => {
+    const {id_rol, Descripcion}=req.body
+    let sql = `UPDATE Rol SET descripcion = '${Descripcion}' WHERE (id_rol = '${id_rol}')`; 
+    conexion.query(sql, (error, rows)=> {
+        if(error) throw error
+           else{
+            res.json('Dato modificado correctamente');
+           }
+})
+});
+
+
+
 
 
 
