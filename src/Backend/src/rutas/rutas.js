@@ -341,5 +341,17 @@ routes.post('/seguimiento/', (req, res) => {
    })
 });
 
+//  SEGUIMIENTO PROBLEMA - PUT (AVIÑA VELARDE DANIELA MICHELLE)
+routes.put('/seguimiento/', (req, res) => {
+    const {Status_problema, Folio_problema}=req.body
+    let sql = `UPDATE segproblema SET  Status_problema = '${Status_problema}' WHERE (Folio_problema = '${Folio_problema}')`; 
+    conexion.query(sql, (error, rows)=> {
+        if(error) throw error
+           else{
+            res.json('Registro modificado correctamente');
+           }
+    })
+});
+
 module.exports = routes;
 
