@@ -8,7 +8,6 @@ routes.get('/',(req,res)=>{
 
 const conexion = require("../config/conexionBD")
 
-
 routes.get('/bdregistro',(req,res)=>{
     let query = "SELECT * FROM RegistroDatos";
     conexion.query(query,(error, rows)=>{
@@ -48,9 +47,10 @@ routes.get('/bdregistr',(req,res)=>{
     })
    
 })
+
 //Ruta seguimeinto del problema
 routes.get('/bdseguimeinto',(req,res)=>{
-    let query = "SELECT * FROM problemtracking    ";
+    let query = "SELECT * FROM segproblema";
     conexion.query(query,(error, rows)=>{
         if(error){
             res.send(error);
@@ -61,7 +61,6 @@ routes.get('/bdseguimeinto',(req,res)=>{
     })
    
 })
-
 
 //Ruta solucion del problema
 routes.get('/bdsolprob',(req,res)=>{
@@ -298,6 +297,22 @@ routes.put('/reg4/', (req, res) => {
     })
 });
 
+//------------------------------RUTAS CRUD (CREATE, READ, UPDATE, DELETE)------------------------------------
+
+//  SEGUIMIENTO PROBLEMA - GET (AVIÑA VELARDE DANIELA MICHELLE)
+routes.get('/seguimiento/:id',(req,res)=>{
+    const {id}=req.params;
+    let query = "SELECT * FROM segproblema WHERE Folio_problema=?";
+    conexion.query(query,[id],(error, rows)=>{
+        if(error){
+            res.send(error);
+        }
+        else{
+            res.send(rows);
+        }
+    })
+    //res.send('Base de datos');
+})
 
 
 module.exports = routes;
