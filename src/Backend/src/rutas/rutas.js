@@ -20,7 +20,7 @@ routes.get('/bdsolprob',(req,res)=>{
             res.send(rows);
         }
     })
-    //res.send('Base de datos');
+    //res.send('Base de datos')
 })
 module.exports = routes;
 
