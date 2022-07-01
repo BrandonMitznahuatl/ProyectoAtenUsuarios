@@ -138,6 +138,23 @@ routes.get('/bd/rol/:id', (req, res) =>{
     
 });
 
+//  LOGIN ROL - DELETE (HERNÁNDEZ PACHECO ANDREA ALIN)
+routes.delete('/bd/rol/:id', (req, res) =>{
+    const {id}=req.params;
+    let query = "delete from Rol where id_rol=?";
+    conexion.query(query,[id],(error,rows)=>{
+        if(error)
+        {
+            console.error(error);
+        }
+           else{
+            res.send('Elemento eliminado');
+           }
+        
+    })
+});
+
+
 
 
 
