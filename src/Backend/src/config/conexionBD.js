@@ -6,5 +6,11 @@ const conecta = mysql.createConnection({
     port:"3306",
     database:"ProyectAten"
 });
-conecta.connect();
+conecta.connect((error)=>{
+    if(error){
+        conecta.log('Hay un error' +error);
+    }else{
+        console.log('Conectado');
+    }
+})
 module.exports=conecta;

@@ -154,6 +154,18 @@ routes.delete('/bd/rol/:id', (req, res) =>{
     })
 });
 
+//  LOGIN ROL - POST (HERNÁNDEZ PACHECO ANDREA ALIN)
+routes.post('/bd/rol/Insertar/', (req, res) => {
+    const {id_rol, Descripcion}=req.body
+    let sql = `insert into Rol(id_rol, descripcion) values ( '${id_rol}','${Descripcion}')`;
+    conexion.query(sql, (error, rows)=> {
+        if(error) throw error
+           else{
+            res.json('Dato insertado correctamente');
+           }
+})
+});
+
 
 
 
