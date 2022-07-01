@@ -9,6 +9,45 @@ routes.get('/',(req,res)=>{
 const conexion = require("../config/conexionBD")
 
 
+routes.get('/bdregistro',(req,res)=>{
+    let query = "SELECT * FROM RegistroDatos";
+    conexion.query(query,(error, rows)=>{
+        if(error){
+            res.send(error);
+        }
+        else{
+            res.send(rows);
+        }
+    })
+   
+})
+
+routes.get('/bdregistro1/:id',(req,res)=>{
+    const {id}=req.params;
+    let query = "SELECT * FROM RegistroDatos where id_regDatos=?";
+    conexion.query(query,[id],(error, rows)=>{
+        if(error){
+            res.send(error);
+        }
+        else{
+            res.send(rows);
+        }
+    })
+    //res.send('Base de datos');
+})
+
+routes.get('/bdregistr',(req,res)=>{
+    let query = "SELECT * FROM RegistroDatos Where Edad=22";
+    conexion.query(query,(error, rows)=>{
+        if(error){
+            res.send(error);
+        }
+        else{
+            res.send(rows);
+        }
+    })
+   
+})
 //Ruta seguimeinto del problema
 routes.get('/bdseguimeinto',(req,res)=>{
     let query = "SELECT * FROM problemtracking    ";
