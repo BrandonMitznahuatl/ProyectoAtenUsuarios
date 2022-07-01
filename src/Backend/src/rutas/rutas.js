@@ -10,8 +10,8 @@ const conexion = require("../config/conexionBD")
 
 
 //Ruta seguimeinto del problema
-routes.get('/bdseguimiento',(req,res)=>{
-    let query = "SELECT * FROM problemtracking;";
+routes.get('/bdseguimeinto',(req,res)=>{
+    let query = "SELECT * FROM problemtracking    ";
     conexion.query(query,(error, rows)=>{
         if(error){
             res.send(error);
@@ -20,12 +20,26 @@ routes.get('/bdseguimiento',(req,res)=>{
             res.send(rows);
         }
     })
-    //res.send('Base de datos');
+   
 })
 
-//Ruta de Loc¿ginAcceso
+
+//Ruta solucion del problema
+routes.get('/bdsolprob',(req,res)=>{
+    let query = "select *from solprob";
+    conexion.query(query,(error, rows)=>{
+        if(error){
+            res.send(error);
+        }
+        else{
+            res.send(rows);
+        }
+    })
+})
+//Ruta Login Acceso
+
 routes.get('/bdAcceso',(req,res)=>{
-    let query = "SELECT * FROM LoginAcceder;";
+    let query = "select usuario, contraseña from Acceso;";
     conexion.query(query,(error, rows)=>{
         if(error){
             res.send(error);
@@ -34,12 +48,11 @@ routes.get('/bdAcceso',(req,res)=>{
             res.send(rows);
         }
     })
-    //res.send('Base de datos');
 })
 
-//Ruta de Loc¿ginRecuperar
-routes.get('/bdRecuperar',(req,res)=>{
-    let query = "SELECT * FROM LoginRecuperar;";
+//RUTA DE LOGIN ROL
+routes.get('/bdRol',(req,res)=>{
+    let query = "select * from Rol;";
     conexion.query(query,(error, rows)=>{
         if(error){
             res.send(error);
@@ -48,12 +61,11 @@ routes.get('/bdRecuperar',(req,res)=>{
             res.send(rows);
         }
     })
-    //res.send('Base de datos');
 })
 
-//Ruta de LoginRegistrar
-routes.get('/bdRegistrar',(req,res)=>{
-    let query = "SELECT * FROM LoginRegistro;";
+//RUTA DE LOGIN DATOS PERSONALES
+routes.get('/bdDatosPers',(req,res)=>{
+    let query = "select * from DatosPersonales;";
     conexion.query(query,(error, rows)=>{
         if(error){
             res.send(error);
@@ -62,7 +74,6 @@ routes.get('/bdRegistrar',(req,res)=>{
             res.send(rows);
         }
     })
-    //res.send('Base de datos');
 })
 
 routes.get('/registro',(req,res)=>{
