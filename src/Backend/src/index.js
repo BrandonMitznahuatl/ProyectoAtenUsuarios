@@ -13,4 +13,4 @@ app.listen(app.get('port'),(error)=>{
 })
 
 
-app.use('/conex',require('./rutas/rutas.js'))
+app.use('/api',require('./rutas/rutas.js'))
