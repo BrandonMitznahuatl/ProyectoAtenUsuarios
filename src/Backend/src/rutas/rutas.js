@@ -122,6 +122,21 @@ routes.delete('/bd/:id', (req, res) =>{
     })
 });
 
+//  LOGIN ROL - GET (ANDREA ALIN HERNANDEZ PACHECO)
+routes.get('/bd/rol/:id', (req, res) =>{
+    const {id}=req.params;
+    let query = "select * from Rol where id_rol=?";
+    conexion.query(query,[id],(error,rows)=>{
+        if(error) 
+        {
+            console.error(error);
+        }
+           else{
+            res.send(rows);
+           }
+    })
+    
+});
 
 
 
