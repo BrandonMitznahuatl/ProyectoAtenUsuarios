@@ -329,16 +329,17 @@ routes.delete('/seguimiento/:id',(req,res)=>{
 })
 
 //  SEGUIMIENTO PROBLEMA - POST (AVIÑA VELARDE DANIELA MICHELLE)
-routes.post('seguimiento/', (req, res) => {
-    const {id_regDatos, Nombre, ApellPat, ApellMat, Correo, Edad, Numero_Tel, Sexo}=req.body
-    let sql = `insert into RegistroDatos(id_regDatos, Nombre, ApellPat, ApellMat,Correo, Edad,Numero_Tel,Sexo) values 
-    ( '${id_regDatos}','${Nombre}','${ApellPat}','${ApellMat}','${Correo}','${Edad}','${Numero_Tel}','${Sexo}')`;
+routes.post('/seguimiento/', (req, res) => {
+    const { Nombre, Apellidos, Folio_problema, Correo, Número_telefónico, Tipo_de_problema, Especifique_problema, Status_problema}=req.body
+    let sql = `insert into segproblema (Nombre, Apellidos, Folio_problema, Correo, Número_telefónico, Tipo_de_problema, Especifique_problema, Status_problema) values
+    ('${Nombre}','${Apellidos}','${Folio_problema}','${Correo}','${Número_telefónico}','${Tipo_de_problema}','${Especifique_problema}','${Status_problema}')`;
     conexion.query(sql, (error, rows)=> {
         if(error) throw error
            else{
-            res.json('Dato insertado correctamente');
+            res.json('Registro insertado correctamente');
            }
    })
 });
+
 module.exports = routes;
 
