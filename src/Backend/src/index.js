@@ -6,10 +6,9 @@ app.set('port', port);
 app.listen(app.get('port'),(error)=>{
     if(error)
     {
-        console.log('Errror al iniciar el servicio'+ error)
+        console.log('Error al iniciar el servicio'+ error)
     }else{
         console.log('Servidor iniciado en el puerto: '+port)
     }
 })
-
 app.use('/api',require('./rutas/rutas.js'))
