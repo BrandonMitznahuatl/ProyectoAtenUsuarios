@@ -11,6 +11,6 @@ app.listen(app.get('port'),(error)=>{
         console.log('Servidor iniciado '+port)
     }
 })
-console.log('Hola soy servidor');
+
 
 app.use('/conex',require('./rutas/rutas.js'))
