@@ -21,6 +21,7 @@ routes.get('/bdregistro',(req,res)=>{
    
 })
 
+//Get registro
 routes.get('/bdregistro1/:id',(req,res)=>{
     const {id}=req.params;
     let query = "SELECT * FROM RegistroDatos where id_regDatos=?";
@@ -48,7 +49,7 @@ routes.get('/bdregistr',(req,res)=>{
    
 })
 
-//Ruta seguimeinto del problema
+//Get seguimeinto del problema
 routes.get('/bdseguimeinto',(req,res)=>{
     let query = "SELECT * FROM segproblema";
     conexion.query(query,(error, rows)=>{
@@ -59,10 +60,9 @@ routes.get('/bdseguimeinto',(req,res)=>{
             res.send(rows);
         }
     })
-   
 })
 
-//Ruta solucion del problema
+//Get solucion del problema
 routes.get('/bdsolprob',(req,res)=>{
     let query = "select *from solprob";
     conexion.query(query,(error, rows)=>{
@@ -74,8 +74,8 @@ routes.get('/bdsolprob',(req,res)=>{
         }
     })
 })
-//Ruta Login Acceso
 
+//Ruta Login Acceso
 routes.get('/bdAcceso',(req,res)=>{
     let query = "select usuario, contraseña from Acceso;";
     conexion.query(query,(error, rows)=>{
@@ -144,6 +144,7 @@ routes.get('/bd/acceso/:id', (req, res) =>{
     })
     
 });
+
 //  LOGIN ACCESO - DELETE (HERNÁNDEZ PACHECO ANDREA ALIN)
 routes.delete('/bd/acceso/:id', (req, res) =>{
     const {id}=req.params;
@@ -156,7 +157,6 @@ routes.delete('/bd/acceso/:id', (req, res) =>{
            else{
             res.send('Elemento eliminado');
            }
-        
     })
 });
 
@@ -196,8 +196,7 @@ routes.get('/bd/rol/:id', (req, res) =>{
            else{
             res.send(rows);
            }
-    })
-    
+    })  
 });
 
 //  LOGIN ROL - DELETE (HERNÁNDEZ PACHECO ANDREA ALIN)
@@ -211,8 +210,7 @@ routes.delete('/bd/rol/:id', (req, res) =>{
         }
            else{
             res.send('Elemento eliminado');
-           }
-        
+           }     
     })
 });
 
@@ -352,6 +350,10 @@ routes.put('/seguimiento/', (req, res) => {
            }
     })
 });
+
+
+//Brandon Jair
+
 
 module.exports = routes;
 
