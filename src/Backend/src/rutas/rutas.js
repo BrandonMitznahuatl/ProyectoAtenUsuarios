@@ -50,7 +50,7 @@ routes.get('/bdregistr',(req,res)=>{
 })
 
 //Get seguimeinto del problema
-routes.get('/bdseguimeinto',(req,res)=>{
+routes.get('/bdseguimiento',(req,res)=>{
     let query = "SELECT * FROM segproblema";
     conexion.query(query,(error, rows)=>{
         if(error){
