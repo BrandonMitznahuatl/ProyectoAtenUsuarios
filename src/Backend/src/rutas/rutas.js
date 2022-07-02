@@ -37,27 +37,6 @@ routes.get('/bdregistro1/:id',(req,res)=>{
 })
 
 
-//Ruta solucion del problema VILLAGRANA
-routes.get('/bdsolprob/:id', (req, res) =>{
-    const {id}=req.params;
-    let query = "select * from solusprob where id_soluprob=?";
-    conexion.query(query,[id],(error,rows)=>{
-        if(error) 
-        {
-            console.error(error);
-
-routes.get('/bdregistr',(req,res)=>{
-    let query = "SELECT * FROM RegistroDatos Where Edad=22";
-    conexion.query(query,(error, rows)=>{
-        if(error){
-            res.send(error);
-        }
-        else{
-            res.send(rows);
-        }
-    })
-   
-});
 
 //Get seguimeinto del problema
 routes.get('/bdseguimiento',(req,res)=>{
@@ -398,19 +377,27 @@ routes.delete('/bdsolprob/:id', (req, res) =>{
 });
 
 //REGISTRO PROBLEMA [POST]: VILLAGRANA
-routes.post('/bdsolprob/', (req, res) =>{
-    const {id_soluprob, id_Acceso, Nombre, ApellPat, ApellMat, correo, problem, NumTelefono, tipo, fecha}=req.body;
-    let sql = `insert into solusprob(id_soluprob, id_Acceso, Nombre, ApellPat, ApellMat, correo, problem, NumTelefono, tipo, fecha) values 
+
+routes.post('/bdsoluprob/', (req, res) => {
+    const {id_soluprob, id_Acceso, Nombre, ApellPat, ApellMat, correo, problem, NumTelefono, tipo, fecha}=req.body
+    let sql = `insert into solusprob(id_soluprob, id_Acceso, Nombre, ApellPat, ApellMat, correo, problem, NumTelefono, tipo, fecha) values
     ('${id_soluprob}','${id_Acceso}','${Nombre}','${ApellPat}','${ApellMat}','${correo}','${problem}','${NumTelefono}','${tipo}','${fecha}')`;
-    conexion.query(sql,(error,rows)=>{
-        if(error) 
-        {
-            console.error(error);
-        }
+    conexion.query(sql, (error, rows)=> {
+        if(error) throw error
            else{
-            res.send("Datos registrados de forma correcta");
+            res.json('Registro insertado correctamente');
+           }
+   })
+});
+//REGISTRO PROBLEMA [PUT]: VILLAGRANA
+routes.put('/bdsoluprob/', (req, res) => {
+    const {problem, id_soluprob}=req.body
+    let sql = `UPDATE solusprob SET  problem = '${problem}' WHERE (id_soluprob = '${id_soluprob}')`; 
+    conexion.query(sql, (error, rows)=> {
+        if(error) throw error
+           else{
+            res.json('Registro modificado correctamente');
            }
     })
-    
 });
 module.exports = routes;
