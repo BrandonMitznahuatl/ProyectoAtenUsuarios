@@ -359,6 +359,19 @@ routes.get('/bdsolprob',(req,res)=>{
 
     
 });
+routes.get('/bdsoluprob/:id',(req,res)=>{
+    const {id}=req.params;
+    let query = "select * from solusprob where id_soluprob=?";
+    conexion.query(query,[id],(error, rows)=>{
+        if(error){
+            res.send(error);
+        }
+        else{
+            res.send(rows);
+        }
+    })
+    //res.send('Base de datos');
+})
 
 //REGISTRO PROBLEMA [DELETE]: VILLAGRANA
 routes.delete('/bdsolprob/:id', (req, res) =>{
