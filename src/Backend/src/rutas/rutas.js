@@ -325,6 +325,19 @@ routes.post('/reg7/', (req, res) => {
    })
 });
 
+//Insertar
+routes.post('/reg8/', (req, res) => {
+    const {id_regDatos, id_user, Nombre, ApellPat, ApellMat, Correo, Edad, Numero_Tel, Sexo}=req.body
+    let sql = `insert into RegistroDatos(id_regDatos, id_user, Nombre, ApellPat, ApellMat,Correo, Edad,Numero_Tel,Sexo) values 
+    ( '${id_regDatos}','${id_user}','${Nombre}','${ApellPat}','${ApellMat}','${Correo}','${Edad}','${Numero_Tel}','${Sexo}')`;
+    conexion.query(sql, (error, rows)=> {
+        if(error) throw error
+           else{
+            res.json('Dato insertado correctamente');
+           }
+   })
+});
+
 //------------------------------RUTAS CRUD (CREATE, READ, UPDATE, DELETE)------------------------------------
 
 //  SEGUIMIENTO PROBLEMA - GET (AVIÑA VELARDE DANIELA MICHELLE)
