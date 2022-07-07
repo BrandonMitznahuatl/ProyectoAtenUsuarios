@@ -299,6 +299,21 @@ routes.get('/reg5/:id',(req,res)=>{
     })
     //res.send('Base de datos');
 })
+
+//Eliminar
+routes.delete('/reg6/:id',(req,res)=>{
+    const {id}=req.params;
+    let query = "Delete From RegistroDatos where id_user=?";
+    conexion.query(query,[id],(error, rows)=>{
+        if(error){
+            res.send(error);
+        }
+        else{
+            res.send('Registro eliminado');
+        }
+    })
+})
+
 //------------------------------RUTAS CRUD (CREATE, READ, UPDATE, DELETE)------------------------------------
 
 //  SEGUIMIENTO PROBLEMA - GET (AVIÑA VELARDE DANIELA MICHELLE)
