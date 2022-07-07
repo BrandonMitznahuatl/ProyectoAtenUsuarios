@@ -306,7 +306,20 @@ routes.put('/reg4/', (req, res) => {
            }
     })
 });
-
+//Consultar
+routes.get('/reg5/:id',(req,res)=>{
+    const {id}=req.params;
+    let query = "Select * From RegistroDatos where id_user=?";
+    conexion.query(query,[id],(error, rows)=>{
+        if(error){
+            res.send(error);
+        }
+        else{
+            res.send(rows);
+        }
+    })
+    //res.send('Base de datos');
+})
 //------------------------------RUTAS CRUD (CREATE, READ, UPDATE, DELETE)------------------------------------
 
 //  SEGUIMIENTO PROBLEMA - GET (AVIÑA VELARDE DANIELA MICHELLE)
