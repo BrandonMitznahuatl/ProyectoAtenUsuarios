@@ -286,6 +286,83 @@ routes.put('/reg4/', (req, res) => {
     })
 });
 
+//Consultar
+routes.get('/reg5/:id',(req,res)=>{
+    const {id}=req.params;
+    let query = "Select * From RegistroDatos where id_user=?";
+    conexion.query(query,[id],(error, rows)=>{
+        if(error){
+            res.send(error);
+        }
+        else{
+            res.send(rows);
+        }
+    })
+    //res.send('Base de datos');
+})
+//Eliminar
+routes.delete('/reg6/:id',(req,res)=>{
+    const {id}=req.params;
+    let query = "Delete From RegistroDatos where id_user=?";
+    conexion.query(query,[id],(error, rows)=>{
+        if(error){
+            res.send(error);
+        }
+        else{
+            res.send('Registro eliminado');
+        }
+    })
+})
+//Insertar 
+routes.post('/reg7/', (req, res) => {
+    const {id_user, tipuser}=req.body
+    let sql = `insert into tipoUsuario (id_user, tipuser) values 
+    ( '${id_user}','${tipuser}')`;
+    conexion.query(sql, (error, rows)=> {
+        if(error) throw error
+           else{
+            res.json('Dato insertado correctamente');
+           }
+   })
+});
+//Insertar
+routes.post('/reg8/', (req, res) => {
+    const {id_regDatos, id_user, Nombre, ApellPat, ApellMat, Correo, Edad, Numero_Tel, Sexo}=req.body
+    let sql = `insert into RegistroDatos(id_regDatos, id_user, Nombre, ApellPat, ApellMat,Correo, Edad,Numero_Tel,Sexo) values 
+    ( '${id_regDatos}','${id_user}','${Nombre}','${ApellPat}','${ApellMat}','${Correo}','${Edad}','${Numero_Tel}','${Sexo}')`;
+    conexion.query(sql, (error, rows)=> {
+        if(error) throw error
+           else{
+            res.json('Dato insertado correctamente');
+           }
+   })
+});
+
+//Modificar
+routes.put('/reg9/', (req, res) => {
+    const {id_user, tipuser}=req.body
+    let sql = `UPDATE tipoUsuario SET  tipuser = '${tipuser}' WHERE (id_user = '${id_user}')`; 
+    conexion.query(sql, (error, rows)=> {
+        if(error) throw error
+           else{
+            res.json('Dato modificado correctamente');
+           }
+    })
+});
+
+//Modificar
+routes.put('/reg10/', (req, res) => {
+    const {id_regDatos, Correo}=req.body
+    let sql = `UPDATE RegistroDatos SET  Correo = '${Correo}' WHERE (id_regDatos = '${id_regDatos}')`; 
+    conexion.query(sql, (error, rows)=> {
+        if(error) throw error
+           else{
+            res.json('Dato modificado correctamente');
+           }
+    })
+});
+
+
 //------------------------------RUTAS CRUD (CREATE, READ, UPDATE, DELETE)------------------------------------
 
 //  SEGUIMIENTO PROBLEMA - GET (AVIÑA VELARDE DANIELA MICHELLE)
