@@ -338,6 +338,29 @@ routes.post('/reg8/', (req, res) => {
    })
 });
 
+//Modificar
+routes.put('/reg9/', (req, res) => {
+    const {id_user, tipuser}=req.body
+    let sql = `UPDATE tipoUsuario SET  tipuser = '${tipuser}' WHERE (id_user = '${id_user}')`; 
+    conexion.query(sql, (error, rows)=> {
+        if(error) throw error
+           else{
+            res.json('Dato modificado correctamente');
+           }
+    })
+});
+//Modificar
+routes.put('/reg10/', (req, res) => {
+    const {id_regDatos, Correo}=req.body
+    let sql = `UPDATE RegistroDatos SET  Correo = '${Correo}' WHERE (id_regDatos = '${id_regDatos}')`; 
+    conexion.query(sql, (error, rows)=> {
+        if(error) throw error
+           else{
+            res.json('Dato modificado correctamente');
+           }
+    })
+});
+
 //------------------------------RUTAS CRUD (CREATE, READ, UPDATE, DELETE)------------------------------------
 
 //  SEGUIMIENTO PROBLEMA - GET (AVIÑA VELARDE DANIELA MICHELLE)
