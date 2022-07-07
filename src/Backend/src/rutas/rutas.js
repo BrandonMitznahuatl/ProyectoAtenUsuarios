@@ -36,18 +36,7 @@ routes.get('/bdregistro1/:id',(req,res)=>{
     //res.send('Base de datos');
 })
 
-routes.get('/bdregistr',(req,res)=>{
-    let query = "SELECT * FROM RegistroDatos Where Edad=22";
-    conexion.query(query,(error, rows)=>{
-        if(error){
-            res.send(error);
-        }
-        else{
-            res.send(rows);
-        }
-    })
-   
-})
+
 
 //Get seguimeinto del problema
 routes.get('/bdseguimiento',(req,res)=>{
@@ -74,18 +63,8 @@ routes.get('/bdseguimiento1',(req,res)=>{
     })
 })
 
-//Get solucion del problema
-routes.get('/bdsolprob',(req,res)=>{
-    let query = "select *from solprob";
-    conexion.query(query,(error, rows)=>{
-        if(error){
-            res.send(error);
-        }
-        else{
-            res.send(rows);
-        }
-    })
-})
+
+
 
 //Ruta Login Acceso
 routes.get('/bdAcceso',(req,res)=>{
@@ -378,7 +357,73 @@ routes.put('/seguimiento/', (req, res) => {
 
 
 //Brandon Jair
+//Get solucion del problema
+routes.get('/bdsolprob',(req,res)=>{
+    let query = "select *from solprob";
+    conexion.query(query,(error, rows)=>{
+        if(error){
+            res.send(error);
 
+        }
+           else{
+            res.send(rows);
+           }
+    })
 
+    
+});
+routes.get('/bdsoluprob/:id',(req,res)=>{
+    const {id}=req.params;
+    let query = "select * from solusprob where id_soluprob=?";
+    conexion.query(query,[id],(error, rows)=>{
+        if(error){
+            res.send(error);
+        }
+        else{
+            res.send(rows);
+        }
+    })
+    //res.send('Base de datos');
+})
+
+//REGISTRO PROBLEMA [DELETE]: VILLAGRANA
+routes.delete('/bdsolprob/:id', (req, res) =>{
+    const {id}=req.params;
+    let query = "DELETE FROM solusprob where id_soluprob=?";
+    conexion.query(query,[id],(error,rows)=>{
+        if(error) 
+        {
+            console.error(error);
+        }
+           else{
+            res.send("Datos eliminados de forma correcta");
+           }
+    })
+    
+});
+
+//REGISTRO PROBLEMA [POST]: VILLAGRANA
+
+routes.post('/bdsoluprob/', (req, res) => {
+    const {id_soluprob, id_Acceso, Nombre, ApellPat, ApellMat, correo, problem, NumTelefono, tipo, fecha}=req.body
+    let sql = `insert into solusprob(id_soluprob, id_Acceso, Nombre, ApellPat, ApellMat, correo, problem, NumTelefono, tipo, fecha) values
+    ('${id_soluprob}','${id_Acceso}','${Nombre}','${ApellPat}','${ApellMat}','${correo}','${problem}','${NumTelefono}','${tipo}','${fecha}')`;
+    conexion.query(sql, (error, rows)=> {
+        if(error) throw error
+           else{
+            res.json('Registro insertado correctamente');
+           }
+   })
+});
+//REGISTRO PROBLEMA [PUT]: VILLAGRANA
+routes.put('/bdsoluprob/', (req, res) => {
+    const {problem, id_soluprob}=req.body
+    let sql = `UPDATE solusprob SET  problem = '${problem}' WHERE (id_soluprob = '${id_soluprob}')`; 
+    conexion.query(sql, (error, rows)=> {
+        if(error) throw error
+           else{
+            res.json('Registro modificado correctamente');
+           }
+    })
+});
 module.exports = routes;
-
