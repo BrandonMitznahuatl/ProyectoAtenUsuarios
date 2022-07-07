@@ -299,7 +299,6 @@ routes.get('/reg5/:id',(req,res)=>{
     })
     //res.send('Base de datos');
 })
-
 //Eliminar
 routes.delete('/reg6/:id',(req,res)=>{
     const {id}=req.params;
