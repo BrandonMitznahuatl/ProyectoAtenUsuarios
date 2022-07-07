@@ -312,6 +312,18 @@ routes.delete('/reg6/:id',(req,res)=>{
         }
     })
 })
+//Insertar 
+routes.post('/reg7/', (req, res) => {
+    const {id_user, tipuser}=req.body
+    let sql = `insert into tipoUsuario (id_user, tipuser) values 
+    ( '${id_user}','${tipuser}')`;
+    conexion.query(sql, (error, rows)=> {
+        if(error) throw error
+           else{
+            res.json('Dato insertado correctamente');
+           }
+   })
+});
 
 //------------------------------RUTAS CRUD (CREATE, READ, UPDATE, DELETE)------------------------------------
 
