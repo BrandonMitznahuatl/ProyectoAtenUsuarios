@@ -13,8 +13,12 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { Navbar2Component } from './navbar2/navbar2.component';
 import { LoginComponent } from './login/login.component';
 import { CargadatosComponent } from './cargadatos/cargadatos.component';
+<<<<<<< Updated upstream
 import { FormsModule } from '@angular/forms';
 
+=======
+import { HttpClientModule } from '@angular/common/http';
+>>>>>>> Stashed changes
 @NgModule({
   declarations: [
     AppComponent,
@@ -33,8 +37,12 @@ import { FormsModule } from '@angular/forms';
   imports: [
     BrowserModule,
     AppRoutingModule,
+<<<<<<< Updated upstream
     HttpClientModule, 
     FormsModule
+=======
+    HttpClientModule
+>>>>>>> Stashed changes
   ],
   providers: [],
   bootstrap: [AppComponent]

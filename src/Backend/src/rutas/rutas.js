@@ -387,6 +387,19 @@ routes.get('/seguimiento/:id',(req,res)=>{
     })
     //res.send('Base de datos');
 })
+routes.get('/seguimiento/',(req,res)=>{
+    const {id}=req.params;
+    let query = "SELECT * FROM segproblema";
+    conexion.query(query,[id],(error, rows)=>{
+        if(error){
+            res.send(error);
+        }
+        else{
+            res.send(rows);
+        }
+    })
+    //res.send('Base de datos');
+})
 
 //  SEGUIMIENTO PROBLEMA - DELETE (AVIÑA VELARDE DANIELA MICHELLE)
 routes.delete('/seguimiento/:id',(req,res)=>{
