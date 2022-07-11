@@ -2,9 +2,17 @@
 
 const routes = require('express').Router();
 
-routes.get('/',(req,res)=>{
-    res.send('Ruta Principal');
-});
+routes.get('/bd',(req,res)=>{
+    let query = "select * from RegistroDatos";
+    conexion.query(query,(error, rows)=>{
+        if(error){
+            res.send(error);
+        }
+        else{
+            res.send(rows);
+        }
+    })
+})
 
 const conexion = require("../config/conexionBD")
 
