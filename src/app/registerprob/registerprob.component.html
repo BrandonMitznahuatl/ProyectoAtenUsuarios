@@ -1,105 +1,25 @@
-  <div class="container-fluid">
-  <h1 class="fst-italic" >Registro de Problemas</h1>
-  </div>
-  <span class="navbar-toggler-icon"></span>
-  <form class="row g-3 needs-validation" novalidate>
-      <div class="col-md-4">
-        <label for="validationCustom01" class="form-label">Nombre(s)</label>
-        <input type="text" class="form-control" id="validationCustom01" value=" " required>
-        <div class="valid-feedback">
-          Looks good!
-        </div>
-      </div>
-      <div class="col-md-4">
-        <label for="validationCustom02" class="form-label">Apellidos</label>
-        <input type="text" class="form-control" id="validationCustom02" value=" " required>
-        <div class="valid-feedback">
-          Looks good!
-        </div>
-      </div>
-      <div class="col-md-4">
-        <label for="validationCustomUsername" class="form-label">Correo</label>
-        <div class="input-group has-validation">
-          <span class="input-group-text" id="inputGroupPrepend">@</span>
-          <input type="text" class="form-control" id="validationCustomUsername" aria-describedby="inputGroupPrepend" required>
-          <div class="invalid-feedback">
-            Please choose a Email.
-          </div>
-        </div>
-      </div>
-      <div class="col-md-6">
-        <label for="validationCustom03" class="form-label">Número de folio</label>
-        <input type="text" class="form-control" id="validationCustom03" required>
-        <div class="invalid-feedback">
-          Please provide a valid password
-        </div>
-      </div>
-      <div class="form-group">
-        <label for="exampleFormControlTextarea1">Especifique su problema</label>
-        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
-      </div>
-      <div class="col-md-3">
-        <label for="validationCustom05" class="form-label">Número de teléfono</label>
-        <input type="text" class="form-control" id="validationCustom05" required>
-        <div class="invalid-feedback">
-          Please provide a valid Telephone Number.
-        </div>
-      </div>
-      <h6 class="fst-italic">Tipo de Problema</h6>
-      <div class="form-check-center">
-        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
-        <label class="form-check-label" for="flexRadioDefault1 ">
-          Tipo de Problema 1
-        </label>
-      </div>
-      <div class="form-check-center">
-        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
-        <label class="form-check-label" for="flexRadioDefault1 ">
-        Tipo de Problema 2
-        </label>
-      </div>
-      <div class="form-check-center">
-        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
-        <label class="form-check-label" for="flexRadioDefault2">
-        Tipo de Problema 3
-        </label>
-      </div>
-      <div class="col-md-3">
-        <label for="validationCustom04" class="form-label">Fecha</label>
-        <select class="form-select" id="validationCustom04" required>
-          <option selected disabled value="">Escoger fecha...</option>
-          <option>15-06-22</option>
-          <option>16-06-22</option>
-          <option>17-06-22</option>
-          <option>18-06-22</option>
-          <option>19-06-22</option>
-          <option>20-06-22</option>
-          <option>21-06-22</option>
-          <option>22-06-22</option>
-          <option>23-06-22</option>
-          <option>24-06-22</option>
-          <option>25-06-22</option>
-          <option>26-06-22</option>
-        </select>
-        <div class="invalid-feedback">
-          Please select a valid state.
-        </div>
-      </div>
-      <div class="col-12" >
-        <div class="form-check-center">
-          <input class="form-check-input" type="checkbox" value="" id="invalidCheck" required>
-          <label class="form-check-label" for="invalidCheck">
-            Agree to terms and conditions
-          </label>
-          <div class="invalid-feedback">
-            You must agree before submitting.
-          </div>
-        </div>
-      </div>
-      <div class="col-12 text-center">
-        <button class="btn btn-primary" type="submit">RegistrarProblema</button>
-      </div>
-    </form>
-  
-
-
+<p></p>
+<div class="container">
+  <table class="table table-success table-striped">
+     <thead class="table-dark">
+       <tr>
+         <th scope="col">id_soluprob
+         <th>
+         <th scope="col">id_Acceso</th>
+         <th scope="col">Nombre_del_problema</th>
+         <th scope="col">Tipo_problema</th>
+         <th scope="col">Fecha</th>
+       </tr>
+     </thead>
+     <tbody>
+       <tr *ngFor="let i of recupera">
+         <td>{{i.id_soluprob}}</td>
+         <td></td>
+         <td>{{i.id_Acceso}}</td>
+         <td>{{i.Nombre_del_problema}}</td>
+         <td>{{i.Tipo_problema}}</td>
+         <td>{{i.Fecha}}</td>
+       </tr>
+    </tbody>
+  </table>
+</div>

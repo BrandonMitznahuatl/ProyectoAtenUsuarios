@@ -7,6 +7,7 @@ import { WelcomeComponent } from './welcome/welcome.component';
 import { RegisterComponent } from './register/register.component';
 import { ProblemtrackingComponent } from './problemtracking/problemtracking.component';
 import { PagemainComponent } from './pagemain/pagemain.component';
+import { RegisterprobComponent } from './registerprob/registerprob.component';
 import { MicuentaComponent } from './micuenta/micuenta.component';
 import { CatalogoComponent } from './catalogo/catalogo.component';
 import { NavbarComponent } from './navbar/navbar.component';
@@ -28,7 +29,8 @@ import { FormsModule } from '@angular/forms';
     NavbarComponent,
     Navbar2Component,
     LoginComponent,
-    CargadatosComponent
+    CargadatosComponent,
+    RegisterprobComponent
   ],
   imports: [
     BrowserModule,

@@ -442,12 +442,11 @@ routes.put('/seguimiento/', (req, res) => {
 //Brandon Jair
 //Get solucion del problema
 routes.get('/bdsolprob',(req,res)=>{
-    let query = "select *from segProblema";
+    let query = "select *from regProblema";
     conexion.query(query,(error, rows)=>{
         if(error){
 
             res.send(error);
-
         }
         else {
             res.send(rows);
@@ -460,7 +459,7 @@ routes.get('/bdsolprob',(req,res)=>{
 
 routes.get('/bdsolprob/:id',(req,res)=>{
     const {id}=req.params;
-    let query = "select * from solusprob where id_soluprob=?";
+    let query = "select * from regProblema where id_soluprob=?";
     conexion.query(query, [id], (error, rows) => {
         if (error) {
             res.send(error);
@@ -544,7 +543,7 @@ routes.post('/bdsoluprob/', (req, res) => {
 //REGISTRO PROBLEMA [PUT]: VILLAGRANA
 routes.put('/bdsoluprob/', (req, res) => {
     const {Nombre_del_problema, id_soluprob}=req.body
-    let sql = `UPDATE regProblema SET  problem = '${Nombre_del_problema}' WHERE (id_soluprob = '${id_soluprob}')`; 
+    let sql = `UPDATE regProblema SET  Nombre_del_problema = '${Nombre_del_problema}' WHERE (id_soluprob = '${id_soluprob}')`; 
     conexion.query(sql, (error, rows)=> {
         if(error) throw error
            else{
