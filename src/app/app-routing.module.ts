@@ -16,7 +16,7 @@ import { CargadatosComponent } from './cargadatos/cargadatos.component';
 const routes: Routes = [
   {path: 'welcome', component: WelcomeComponent},
   {path: 'register', component: RegisterComponent},
-  {path: 'problemtracking', component: ProblemtrackingComponent},
+  {path: 'seguimiento', component: ProblemtrackingComponent},
   {path: 'catalogo', component: CatalogoComponent},
   {path: 'login', component: LoginComponent},
   {path: 'micuenta', component: MicuentaComponent},
@@ -25,6 +25,7 @@ const routes: Routes = [
   {path: 'navbar2', component: Navbar2Component},
   {path: 'cargadatos', component: CargadatosComponent},
   {path: 'cargar', component:CargadatosComponent}
+
 
 ];
 

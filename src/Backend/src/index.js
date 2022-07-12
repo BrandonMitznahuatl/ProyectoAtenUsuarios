@@ -5,8 +5,8 @@ const cors =(require('cors'))
 
 
 const cors = require('cors');
-app.use(express.json());
 app.use(cors());
+app.use(express.json())
 app.set('port', port);
 app.listen(app.get('port'),(error)=>{
     if(error)

@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+
 import { Observable, retry } from 'rxjs';
 
 
@@ -8,13 +9,24 @@ import { Observable, retry } from 'rxjs';
 })
 export class ConectaserverService {
 
-  URL="http://localhost:4000/api/bd/";
+
+
+  URL2="http://localhost:4000/api/bd1";
+
+  URL="http://localhost:4000/api/bd1/";
+
   constructor(private http:HttpClient) { 
   }
   consultar():Observable<any>{
     let headers = new Headers().set ('Content-Type', 'Application/Json')
+
+    return this.http.get(this.URL2);
+
     return this.http.get(this.URL);
+    
+
 }
+
 ///////////////////////////////////////////////////////////////////////
 //Reyes Mitznahuatl Brandon Jesus
 //get 
@@ -60,6 +72,7 @@ export interface modelo{
 
 ///////////////////////////////////////////////////////////////////////////////
 
+
 export interface modelo{
   Nombre?:String;
   Apellidos?:String;
@@ -79,4 +92,23 @@ id_Acceso?:String
 Nombre_del_problema?:String;
 Tipo_problema?:String;
 fecha?:String;
+}
+
+//AVIÑA VELARDE DANIELA MICHELLE
+
+export interface segui{
+  Folio_seg?:String;
+  id_soluprob?:String;
+  Fecha_revision?:String;
+  Status_problema?:String;
+}
+
+//HERNÁNDEZ PACHECO ANDREA ALIN
+export interface modeloLogin{
+  id_Acceso?:String;
+  id_regDatos?:String;
+  id_rol?:String;
+  Usuario?:String;
+  
+  
 }

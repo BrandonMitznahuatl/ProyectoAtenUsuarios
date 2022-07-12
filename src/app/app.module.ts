@@ -13,7 +13,6 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { Navbar2Component } from './navbar2/navbar2.component';
 import { LoginComponent } from './login/login.component';
 import { CargadatosComponent } from './cargadatos/cargadatos.component';
-
 import { FormsModule } from '@angular/forms';
 
 @NgModule({
