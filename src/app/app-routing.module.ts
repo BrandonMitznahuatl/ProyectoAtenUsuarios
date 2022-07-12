@@ -16,18 +16,14 @@ import { CargadatosComponent } from './cargadatos/cargadatos.component';
 const routes: Routes = [
   {path: 'welcome', component: WelcomeComponent},
   {path: 'register', component: RegisterComponent},
-  {path: 'problemtracking', component: ProblemtrackingComponent},
+  {path: 'seguimiento', component: ProblemtrackingComponent},
   {path: 'catalogo', component: CatalogoComponent},
   {path: 'login', component: LoginComponent},
   {path: 'micuenta', component: MicuentaComponent},
   {path: 'pagemain', component: PagemainComponent},
   {path: 'registerprob', component: RegisterprobComponent},
   {path: 'navbar2', component: Navbar2Component},
-<<<<<<< Updated upstream
   {path: 'cargadatos', component: CargadatosComponent}
-=======
-  {path: 'cargar', component:CargadatosComponent}
->>>>>>> Stashed changes
 
 ];
 

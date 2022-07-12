@@ -1,132 +1,27 @@
 <p></p>
-  <div class="display-3 fst-italic text-center"><h1 class="larger" style="color: blue">Seguimiento de Problema</h1>
-  </div>
-    <p class="text fs-4">Seleccione un problema:</p>
-    <div class="row">
-      <div class="col">
-<table class="table table-primary" >
-    <thead>
+<div class="display-3 fst-italic text-center">
+  <h1 class="larger" style="color: blue">Seguimiento de Problema</h1>
+</div>
+<div class="container">
+  <table class="table table-success table-striped">
+    <thead class="table-dark">
       <tr>
-        <th scope="col">Problema</th>
-        <th scope="col">Folio</th>
-        <th scope="col">Fecha</th>
+        <th scope="col">Folio_seg
+        <th>
+        <th scope="col">id_soluprob</th>
+        <th scope="col">Fecha_revision</th>
+        <th scope="col">Status_problema</th>
       </tr>
     </thead>
     <tbody>
-      <tr>
-        <th scope="row">Problema 1</th>
-        <td>1234</td>
-        <td>01/02/2020</td>
-        <td><button class="btn btn-primary" (click)=Ocultar1()>Mostrar</button></td>
-      </tr>
-      <tr>
-        <th scope="row">Problema 2</th>
-        <td>5678</td>
-        <td>03/04/2021</td>
-        <td><button class="btn btn-primary" (click)=Ocultar2()>Mostrar</button></td>
+      <tr *ngFor="let i of recupera">
+        <td>{{i.Folio_seg}}</td>
+        <td></td>
+
+        <td>{{i.id_soluprob}}</td>
+        <td>{{i.Fecha_revision}}</td>
+        <td>{{i.Status_problema}}</td>
       </tr>
     </tbody>
   </table>
-  <p class="text fs-4">Información del problema:</p>
-    <li class="form-control mr-sm-2" *ngIf="band1">
-      <form class="row g-3">
-        <div class="col-md-6">
-          <label for="inputEmail4" class="form-label">Nombre(s):</label>
-          <input type="email" class="form-control" id="inputEmail4">
-        </div>
-        <div class="col-md-6">
-          <label for="inputPassword4" class="form-label">Apellidos:</label>
-          <input type="email" class="form-control" id="inputEmail4">
-        </div>
-        <div class="col-md-6">
-          <label for="inputEmail4" class="form-label">Folio de problema:</label>
-          <input type="email" class="form-control" id="inputEmail4">
-        </div>
-        <div class="col-md-6">
-          <label for="inputEmail4" class="form-label">Correo:</label>
-          <input type="email" class="form-control" id="inputEmail4">
-        </div>
-        <div class="col-md-6">
-          <label for="inputEmail4" class="form-label">Número telefónico:</label>
-          <input type="email" class="form-control" id="inputEmail4">
-        </div>
-        <label for="inputEmail4" class="form-label" class="col-md-6">Tipo de problema:</label>
-        <div class="col-md-6">
-          <label for="inputEmail4" class="form-label">Especifique su problema:</label>
-          <textarea class="form-control" id="floatingTextarea2" style="height: 100px"></textarea>
-  <label for="floatingTextarea2"></label>
-        </div>
-        <div class="form-check" class="col-md-6">
-          <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
-          <label class="form-check-label" for="flexRadioDefault1">
-            Tipo de problema 1
-          </label>
-        <div class="form-check" class="col-md-6">
-          <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
-          <label class="form-check-label" for="flexRadioDefault2">
-            Tipo de problema 2
-          </label>
-        </div>
-        <div class="form-check" class="col-md-6">
-          <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
-          <label class="form-check-label" for="flexRadioDefault2">
-            Tipo de problema 3
-          </label>
-        </div>
-      <div class="col-md-6">
-        <label for="inputEmail4" class="form-label" class="fw-bold" style="color: red">STATUS:</label>
-        <input type="email" class="form-control" id="inputEmail4" placeholder="EN PROCESO" style="color:red">
-      </div>
-    </div>
-      </form>
-      <li class="form-control mr-sm-2" *ngIf="band2">
-        <form class="row g-3">
-          <div class="col-md-6">
-            <label for="inputEmail4" class="form-label">Nombre(s):</label>
-            <input type="email" class="form-control" id="inputEmail4">
-          </div>
-          <div class="col-md-6">
-            <label for="inputPassword4" class="form-label">Apellidos:</label>
-            <input type="email" class="form-control" id="inputEmail4">
-          </div>
-          <div class="col-md-6">
-            <label for="inputEmail4" class="form-label">Folio de problema:</label>
-            <input type="email" class="form-control" id="inputEmail4">
-          </div>
-          <div class="col-md-6">
-            <label for="inputEmail4" class="form-label">Correo:</label>
-            <input type="email" class="form-control" id="inputEmail4">
-          </div>
-          <div class="col-md-6">
-            <label for="inputEmail4" class="form-label">Número telefónico:</label>
-            <input type="email" class="form-control" id="inputEmail4">
-          </div>
-          <label for="inputEmail4" class="form-label" class="col-md-6">Tipo de problema:</label>
-          <div class="col-md-6">
-            <label for="inputEmail4" class="form-label">Especifique su problema:</label>
-            <textarea class="form-control" id="floatingTextarea2" style="height: 100px"></textarea>
-    <label for="floatingTextarea2"></label>
-          </div>
-          <div class="form-check" class="col-md-6">
-            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
-            <label class="form-check-label" for="flexRadioDefault1">
-              Tipo de problema 1
-            </label>
-          <div class="form-check" class="col-md-6">
-            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
-            <label class="form-check-label" for="flexRadioDefault2">
-              Tipo de problema 2
-            </label>
-          </div>
-          <div class="form-check" class="col-md-6">
-            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
-            <label class="form-check-label" for="flexRadioDefault2">
-              Tipo de problema 3
-            </label>
-          </div>
-        <div class="col-md-6">
-          <label for="inputEmail4" class="form-label" class="fw-bold" style="color: red">STATUS:</label>
-          <input type="email" class="form-control" id="inputEmail4" placeholder="EN PROCESO" style="color:red">
-        </div>
-      </div>
-        </form>
+</div>

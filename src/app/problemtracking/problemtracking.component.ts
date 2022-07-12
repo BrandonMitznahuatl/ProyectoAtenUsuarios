@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ConectaserverService, modelo, segui } from '../services/conectaserver.service';
 
 @Component({
   selector: 'app-problemtracking',
@@ -6,22 +7,21 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./problemtracking.component.css']
 })
 export class ProblemtrackingComponent implements OnInit {
-  band1:boolean=false;
-  band2:boolean=false;
-  constructor() { }
-Ocultar1()
-{
-  console.log(this.band1);
-  this.band1=!this.band1;
-  return this.band1;
-}
-Ocultar2()
-{
-  console.log(this.band2);
-  this.band2=!this.band2;
-  return this.band2;
-}
-  ngOnInit(): void {
+  recupera: segui[] = []
+  constructor(private conectaserver: ConectaserverService) {
+
   }
+  ejecutaconsulta() {
+    this.conectaserver.consultar().subscribe(
+      res => {
+        console.log(res)
+        this.recupera = res
+      }
+    )
+  }
+  ngOnInit(): void {
+    this.ejecutaconsulta();
+  }
+
 
 }

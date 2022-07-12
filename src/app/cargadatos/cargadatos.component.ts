@@ -7,7 +7,6 @@ import { ConectaserverService, modelo } from '../services/conectaserver.service'
   styleUrls: ['./cargadatos.component.css']
 })
 export class CargadatosComponent implements OnInit {
-<<<<<<< Updated upstream
  recupera:any=[];
   constructor(private conectaserver:ConectaserverService) { 
 
@@ -33,20 +32,5 @@ export class CargadatosComponent implements OnInit {
       },
      err => console.log(err)
     );
-=======
-recupera: modelo[]=[]
-  constructor(private conectaserver:ConectaserverService) { }
-ejecutaconsulta(){
-this.conectaserver.consultar().subscribe(
-res=>{
-  console.log(res)
-this.recupera=res
-}
-
-)
-}
-  ngOnInit(): void {
-    this.ejecutaconsulta();
->>>>>>> Stashed changes
   }
 }
