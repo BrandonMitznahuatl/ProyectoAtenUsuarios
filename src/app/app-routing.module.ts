@@ -9,6 +9,7 @@ import { CatalogoComponent } from './catalogo/catalogo.component';
 import { PagemainComponent } from './pagemain/pagemain.component';
 import { RegisterprobComponent } from './registerprob/registerprob.component';
 import { Navbar2Component } from './navbar2/navbar2.component';
+import { CargadatosComponent } from './cargadatos/cargadatos.component';
 
 
 
@@ -21,7 +22,12 @@ const routes: Routes = [
   {path: 'micuenta', component: MicuentaComponent},
   {path: 'pagemain', component: PagemainComponent},
   {path: 'registerprob', component: RegisterprobComponent},
-  {path: 'navbar2', component: Navbar2Component}
+  {path: 'navbar2', component: Navbar2Component},
+<<<<<<< Updated upstream
+  {path: 'cargadatos', component: CargadatosComponent}
+=======
+  {path: 'cargar', component:CargadatosComponent}
+>>>>>>> Stashed changes
 
 ];
 
