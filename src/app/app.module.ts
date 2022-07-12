@@ -12,10 +12,6 @@ import { CatalogoComponent } from './catalogo/catalogo.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { Navbar2Component } from './navbar2/navbar2.component';
 import { LoginComponent } from './login/login.component';
-<<<<<<< HEAD
-import { CargadatosComponent } from './cargadatos/cargadatos.component';
-=======
->>>>>>> 89cd7d6f9dc8c3fa9419693fa8d84e5dc3537eb9
 import { FormsModule } from '@angular/forms';
 
 @NgModule({

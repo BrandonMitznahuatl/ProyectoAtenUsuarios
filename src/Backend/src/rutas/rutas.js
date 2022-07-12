@@ -129,19 +129,11 @@ routes.get('/bdmicuenta', (req, res) => {
 //------------------------------RUTAS CRUD (CREATE, READ, UPDATE, DELETE)------------------------------------
 
 //  LOGIN ACCESO - GET (ANDREA ALIN HERNANDEZ PACHECO)
-<<<<<<< HEAD
-routes.get('/bd/acceso/:id', (req, res) => {
-    const { id } = req.params;
-    let query = "select * from Acceso where Id_regDatos=?";
-    conexion.query(query, [id], (error, rows) => {
-        if (error) {
-=======
 routes.get('/bd1/', (req, res) =>{
     let query = "select * from Acceso";
     conexion.query(query,(error,rows)=>{
         if(error) 
         {
->>>>>>> 89cd7d6f9dc8c3fa9419693fa8d84e5dc3537eb9
             console.error(error);
         }
         else {
@@ -461,13 +453,8 @@ routes.get('/bdsolprob', (req, res) => {
 
 
 });
-<<<<<<< HEAD
-routes.get('/bdsoluprob/:id', (req, res) => {
-    const { id } = req.params;
-=======
 routes.get('/bdsolprob/:id',(req,res)=>{
     const {id}=req.params;
->>>>>>> 89cd7d6f9dc8c3fa9419693fa8d84e5dc3537eb9
     let query = "select * from solusprob where id_soluprob=?";
     conexion.query(query, [id], (error, rows) => {
         if (error) {
