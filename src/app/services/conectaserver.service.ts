@@ -8,14 +8,19 @@ import { Observable, retry } from 'rxjs';
   providedIn: 'root'
 })
 export class ConectaserverService {
+
   URL="http://localhost:4000/api/bdsolprob";
+
+
 
   constructor(private http:HttpClient) { 
   }
   consultar():Observable<any>{
     let headers = new Headers().set ('Content-Type', 'Application/Json')
 
+
     return this.http.get(this.URL);
+    
     
 
 }
@@ -66,6 +71,7 @@ export interface modelo{
 ///////////////////////////////////////////////////////////////////////////////
 
 
+
 export interface modelo{
   Nombre?:String;
   Apellidos?:String;
@@ -87,6 +93,7 @@ Tipo_problema?:String;
 Fecha?:String;
 }
 
+
 //AVIÑA VELARDE DANIELA MICHELLE
 
 export interface segui{
@@ -103,5 +110,8 @@ export interface modeloLogin{
   id_rol?:String;
   Usuario?:String;
   
+
   
 }
+
+
