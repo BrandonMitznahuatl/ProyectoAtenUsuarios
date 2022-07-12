@@ -1,17 +1,31 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+<<<<<<< HEAD
+=======
+
+>>>>>>> 89cd7d6f9dc8c3fa9419693fa8d84e5dc3537eb9
 @Injectable({
   providedIn: 'root'
 })
 export class ConectaserverService {
+<<<<<<< HEAD
   URL="http://localhost:4000/api/bd/";
   URL2="http://localhost:4000/api/bd1";
+=======
+  URL="http://localhost:4000/api/bd1/";
+
+>>>>>>> 89cd7d6f9dc8c3fa9419693fa8d84e5dc3537eb9
   constructor(private http:HttpClient) { 
   }
   consultar():Observable<any>{
     let headers = new Headers().set ('Content-Type', 'Application/Json')
+<<<<<<< HEAD
     return this.http.get(this.URL2);
+=======
+    return this.http.get(this.URL);
+    
+>>>>>>> 89cd7d6f9dc8c3fa9419693fa8d84e5dc3537eb9
 }
 
 ///////////////////////////////////////////////////////////////////////
@@ -58,6 +72,7 @@ export interface modelo{
 }
 
 ///////////////////////////////////////////////////////////////////////////////
+<<<<<<< HEAD
 //AVIÑA VELARDE DANIELA MICHELLE
 
 export interface segui{
@@ -66,3 +81,14 @@ export interface segui{
   Fecha_revision?:String;
   Status_problema?:String;
 }
+=======
+//HERNÁNDEZ PACHECO ANDREA ALIN
+export interface modeloLogin{
+  id_Acceso?:String;
+  id_regDatos?:String;
+  id_rol?:String;
+  Usuario?:String;
+  
+  
+}
+>>>>>>> 89cd7d6f9dc8c3fa9419693fa8d84e5dc3537eb9

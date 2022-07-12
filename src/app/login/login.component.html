@@ -39,3 +39,31 @@
   </div>
   
 </div>
+<div class="container">
+  <table class="table table-success table-striped">
+      <thead class="table-dark">
+        <tr>
+          <th scope="col">id_Acceso<th>
+          <th scope="col">id_regDatos</th>
+          <th scope="col">id_rol</th>
+          <th scope="col">Usuario</th>
+         
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let reg of recupera">
+          <td>{{reg.id_Acceso}}</td>
+          <td></td>
+          <td>{{reg.id_regDatos}}</td>
+          <td>{{reg.id_rol}}</td>
+          <td>{{reg.Usuario}}</td>
+          
+          </tr>
+      </tbody>
+    </table>
+  </div>
+
+
+
+
+
