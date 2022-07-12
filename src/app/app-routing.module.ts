@@ -23,11 +23,8 @@ const routes: Routes = [
   {path: 'pagemain', component: PagemainComponent},
   {path: 'registerprob', component: RegisterprobComponent},
   {path: 'navbar2', component: Navbar2Component},
-<<<<<<< Updated upstream
-  {path: 'cargadatos', component: CargadatosComponent}
-=======
+  {path: 'cargadatos', component: CargadatosComponent},
   {path: 'cargar', component:CargadatosComponent}
->>>>>>> Stashed changes
 
 ];
 

@@ -1,16 +1,12 @@
 const express = require('express');
 const app = express();
 const port = ( process.env.port || 4000);
-<<<<<<< Updated upstream
 const cors =(require('cors'))
 
-app.use(cors())
-app.use(express.json())
-=======
+
 const cors = require('cors');
 app.use(express.json());
 app.use(cors());
->>>>>>> Stashed changes
 app.set('port', port);
 app.listen(app.get('port'),(error)=>{
     if(error)

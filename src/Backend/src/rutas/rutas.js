@@ -444,7 +444,7 @@ routes.put('/seguimiento/', (req, res) => {
 //Brandon Jair
 //Get solucion del problema
 routes.get('/bdsolprob',(req,res)=>{
-    let query = "select *from solprob";
+    let query = "select *from segProblema";
     conexion.query(query,(error, rows)=>{
         if(error){
             res.send(error);
@@ -459,7 +459,7 @@ routes.get('/bdsolprob',(req,res)=>{
 });
 routes.get('/bdsolprob/:id',(req,res)=>{
     const {id}=req.params;
-    let query = "select * from solusprob where id_soluprob=?";
+    let query = "select * from regProblema where id_soluprob=?";
     conexion.query(query,[id],(error, rows)=>{
         if(error){
             res.send(error);
@@ -472,7 +472,7 @@ routes.get('/bdsolprob/:id',(req,res)=>{
 })
 routes.get('/bdsolprob2/:problem',(req,res)=>{
     const {problem}=req.params;
-    let query = "select * from solusprob where problem=?";
+    let query = "select * from regProblema where Nombre_del_problema=?";
     conexion.query(query,[problem],(error, rows)=>{
         if(error){
             res.send(error);
@@ -485,7 +485,7 @@ routes.get('/bdsolprob2/:problem',(req,res)=>{
 })
 routes.get('/bdsolprob3/:tipo',(req,res)=>{
     const {tipo}=req.params;
-    let query = "select * from solusprob where tipo=?";
+    let query = "select * from regProblema where Tipo_Problema=?";
     conexion.query(query,[tipo],(error, rows)=>{
         if(error){
             res.send(error);
@@ -498,7 +498,7 @@ routes.get('/bdsolprob3/:tipo',(req,res)=>{
 })
 routes.get('/bdsolprob4/:id',(req,res)=>{
     const {id}=req.params;
-    let query = "select * from solusprob where id_Acceso>?";
+    let query = "select * from regProblema where id_Acceso>?";
     conexion.query(query,[id],(error, rows)=>{
         if(error){
             res.send(error);
@@ -513,7 +513,7 @@ routes.get('/bdsolprob4/:id',(req,res)=>{
 //REGISTRO PROBLEMA [DELETE]: VILLAGRANA
 routes.delete('/bdsolprob/:id', (req, res) =>{
     const {id}=req.params;
-    let query = "DELETE FROM solusprob where id_soluprob=?";
+    let query = "DELETE FROM regProblema where id_soluprob=?";
     conexion.query(query,[id],(error,rows)=>{
         if(error) 
         {
@@ -529,9 +529,9 @@ routes.delete('/bdsolprob/:id', (req, res) =>{
 //REGISTRO PROBLEMA [POST]: VILLAGRANA
 
 routes.post('/bdsoluprob/', (req, res) => {
-    const {id_soluprob, id_Acceso, Nombre, ApellPat, ApellMat, correo, problem, NumTelefono, tipo, fecha}=req.body
-    let sql = `insert into solusprob(id_soluprob, id_Acceso, Nombre, ApellPat, ApellMat, correo, problem, NumTelefono, tipo, fecha) values
-    ('${id_soluprob}','${id_Acceso}','${Nombre}','${ApellPat}','${ApellMat}','${correo}','${problem}','${NumTelefono}','${tipo}','${fecha}')`;
+    const {id_soluprob, id_Acceso, Nombre_del_problema, Tipo_problema, fecha}=req.body
+    let sql = `insert into regProblema(id_soluprob, id_Acceso, Nombre_del_problema, Tipo_problema, fecha) values
+    ('${id_soluprob}','${id_Acceso}','${Nombre_del_problema}','${Tipo_problema}','${fecha}')`;
     conexion.query(sql, (error, rows)=> {
         if(error) throw error
            else{
@@ -541,8 +541,8 @@ routes.post('/bdsoluprob/', (req, res) => {
 });
 //REGISTRO PROBLEMA [PUT]: VILLAGRANA
 routes.put('/bdsoluprob/', (req, res) => {
-    const {problem, id_soluprob}=req.body
-    let sql = `UPDATE solusprob SET  problem = '${problem}' WHERE (id_soluprob = '${id_soluprob}')`; 
+    const {Nombre_del_problema, id_soluprob}=req.body
+    let sql = `UPDATE regProblema SET  problem = '${Nombre_del_problema}' WHERE (id_soluprob = '${id_soluprob}')`; 
     conexion.query(sql, (error, rows)=> {
         if(error) throw error
            else{

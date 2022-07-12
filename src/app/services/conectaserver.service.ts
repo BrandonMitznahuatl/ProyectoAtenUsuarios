@@ -1,17 +1,13 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-<<<<<<< Updated upstream
 import { Observable, retry } from 'rxjs';
 
-=======
-import { Observable } from 'rxjs';
-import { HttpClient } from '@angular/common/http';
->>>>>>> Stashed changes
+
 @Injectable({
   providedIn: 'root'
 })
 export class ConectaserverService {
-<<<<<<< Updated upstream
+
   URL="http://localhost:4000/api/bd/";
   constructor(private http:HttpClient) { 
   }
@@ -63,17 +59,7 @@ export interface modelo{
 }
 
 ///////////////////////////////////////////////////////////////////////////////
-=======
-URL='http://localhost:4000/api/seguimiento/2589';
-URL2='http://localhost:4000/api/seguimiento/';
 
-  constructor(private http:HttpClient) { }
-  //METODO CONSULTA
-  consultar():Observable<any>{
-    let header = new Headers().set('Content-Type','Application/JSON')
-    return this.http.get(this.URL),this.http.get(this.URL2,);
-  }
-}
 export interface modelo{
   Nombre?:String;
   Apellidos?:String;
@@ -84,4 +70,13 @@ export interface modelo{
   Especifique_problema?:String;
   Status_problema ?:String;
 }
->>>>>>> Stashed changes
+
+///////////////////////////////////////////////////////////////////
+//VILLAGRANA APARICIO BRANDON JAIR
+export interface regprob{
+id_soluprob?:String;
+id_Acceso?:String
+Nombre_del_problema?:String;
+Tipo_problema?:String;
+fecha?:String;
+}
