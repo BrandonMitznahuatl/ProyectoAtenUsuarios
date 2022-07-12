@@ -386,6 +386,19 @@ routes.get('/seguimiento/:id',(req,res)=>{
     })
     //res.send('Base de datos');
 })
+routes.get('/seguimiento/',(req,res)=>{
+    const {id}=req.params;
+    let query = "SELECT * FROM segproblema";
+    conexion.query(query,[id],(error, rows)=>{
+        if(error){
+            res.send(error);
+        }
+        else{
+            res.send(rows);
+        }
+    })
+    //res.send('Base de datos');
+})
 
 //  SEGUIMIENTO PROBLEMA - DELETE (AVIÑA VELARDE DANIELA MICHELLE)
 routes.delete('/seguimiento/:id',(req,res)=>{
@@ -443,9 +456,48 @@ routes.get('/bdsolprob',(req,res)=>{
 
     
 });
-routes.get('/bdsoluprob/:id',(req,res)=>{
+routes.get('/bdsolprob/:id',(req,res)=>{
     const {id}=req.params;
     let query = "select * from solusprob where id_soluprob=?";
+    conexion.query(query,[id],(error, rows)=>{
+        if(error){
+            res.send(error);
+        }
+        else{
+            res.send(rows);
+        }
+    })
+    //res.send('Base de datos');
+})
+routes.get('/bdsolprob2/:problem',(req,res)=>{
+    const {problem}=req.params;
+    let query = "select * from solusprob where problem=?";
+    conexion.query(query,[problem],(error, rows)=>{
+        if(error){
+            res.send(error);
+        }
+        else{
+            res.send(rows);
+        }
+    })
+    //res.send('Base de datos');
+})
+routes.get('/bdsolprob3/:tipo',(req,res)=>{
+    const {tipo}=req.params;
+    let query = "select * from solusprob where tipo=?";
+    conexion.query(query,[tipo],(error, rows)=>{
+        if(error){
+            res.send(error);
+        }
+        else{
+            res.send(rows);
+        }
+    })
+    //res.send('Base de datos');
+})
+routes.get('/bdsolprob4/:id',(req,res)=>{
+    const {id}=req.params;
+    let query = "select * from solusprob where id_Acceso>?";
     conexion.query(query,[id],(error, rows)=>{
         if(error){
             res.send(error);
