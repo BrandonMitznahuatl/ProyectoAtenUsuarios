@@ -1,17 +1,19 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable, retry } from 'rxjs';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ConectaserverService {
-  URL="http://localhost:4000/api/bd/";
+  URL="http://localhost:4000/api/bd1/";
+
   constructor(private http:HttpClient) { 
   }
   consultar():Observable<any>{
     let headers = new Headers().set ('Content-Type', 'Application/Json')
     return this.http.get(this.URL);
+    
 }
 ///////////////////////////////////////////////////////////////////////
 //Reyes Mitznahuatl Brandon Jesus
@@ -57,3 +59,12 @@ export interface modelo{
 }
 
 ///////////////////////////////////////////////////////////////////////////////
+//HERNÁNDEZ PACHECO ANDREA ALIN
+export interface modeloLogin{
+  id_Acceso?:String;
+  id_regDatos?:String;
+  id_rol?:String;
+  Usuario?:String;
+  
+  
+}

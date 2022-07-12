@@ -7,7 +7,7 @@ import { ConectaserverService, modelo } from '../services/conectaserver.service'
   styleUrls: ['./cargadatos.component.css']
 })
 export class CargadatosComponent implements OnInit {
- recupera:any=[];
+ recupera:modelo[]=[]
   constructor(private conectaserver:ConectaserverService) { 
 
   }
@@ -20,17 +20,9 @@ export class CargadatosComponent implements OnInit {
     ) 
   }
   ngOnInit(): void {
-    this.ListarRegistro();
+    this.ejecutaconsulta();
+  
   }
   
-  ListarRegistro()
-  {
-    this.conectaserver.getRegistro().subscribe(
-      res=>{
-        this.recupera=res;
-        console.log(res);
-      },
-     err => console.log(err)
-    );
-  }
+  
 }

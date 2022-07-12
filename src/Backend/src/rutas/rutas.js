@@ -129,10 +129,9 @@ routes.get('/bdmicuenta',(req,res)=>{
 //------------------------------RUTAS CRUD (CREATE, READ, UPDATE, DELETE)------------------------------------
 
 //  LOGIN ACCESO - GET (ANDREA ALIN HERNANDEZ PACHECO)
-routes.get('/bd/acceso/:id', (req, res) =>{
-    const {id}=req.params;
-    let query = "select * from Acceso where Id_regDatos=?";
-    conexion.query(query,[id],(error,rows)=>{
+routes.get('/bd1/', (req, res) =>{
+    let query = "select * from Acceso";
+    conexion.query(query,(error,rows)=>{
         if(error) 
         {
             console.error(error);
